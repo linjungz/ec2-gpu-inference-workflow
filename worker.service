@@ -1,0 +1,10 @@
+[Unit]
+Description=Worker for GPU Processing
+
+[Service]
+User=ec2-user
+WorkingDirectory=/home/ec2-user/Glint-Demo
+ExecStart=/usr/bin/python3 /home/ec2-user/Glint-Demo/worker.py
+Environment="AWS_DEFAULT_REGION=cn-northwest-1"
+Restart=on-failure
+KillSignal=SIGINT
