@@ -30,7 +30,7 @@ def main():
             MessageAttributeNames=[
                 'All'
             ],
-            VisibilityTimeout=20,
+            VisibilityTimeout=120,
             WaitTimeSeconds=10
         ) 
         
@@ -43,7 +43,7 @@ def main():
                 logger.info('Received message {} {}'.format(msg['MessageId'], msg['Body']))
                 #wait for a while for processing
                 logger.debug("Processing message")
-                time.sleep(10)
+                time.sleep(60)
 
                 #delete message from queue
                 receipt_handle = msg['ReceiptHandle']
